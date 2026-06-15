@@ -1,0 +1,30 @@
+async function salvar() {
+
+    const dados = {
+        nome: "Hila Bernardes",
+        historia: "Teste de envio",
+        slogan: "Cuidar de pessoas é o que me move"
+    };
+
+    try {
+
+        const resposta = await fetch(
+            "https://script.google.com/macros/s/AKfycbyKUde869hF8qMr7hMstKBUI6YmDqyV9RJ7k1mD6d-6i1TRdu1_n0fXuyQqCfFp5zsK/exec",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(dados)
+            }
+        );
+
+        alert("Enviado!");
+
+    } catch (erro) {
+
+        console.error(erro);
+        alert("Erro ao enviar");
+
+    }
+}
