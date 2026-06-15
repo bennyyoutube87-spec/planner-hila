@@ -1,9 +1,7 @@
 async function salvar() {
 
     const dados = {
-        nome: "Hila Bernardes",
-        historia: "Teste de envio",
-        slogan: "Cuidar de pessoas é o que me move"
+        nome: document.getElementById("nome").value
     };
 
     try {
@@ -19,11 +17,16 @@ async function salvar() {
             }
         );
 
-        alert("Enviado!");
+        const texto = await resposta.text();
+
+        console.log(texto);
+
+        alert("Enviado com sucesso!");
 
     } catch (erro) {
 
         console.error(erro);
+
         alert("Erro ao enviar");
 
     }
