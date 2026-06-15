@@ -1,21 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
-    <title>Planner Hila</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planner de Campanha - Hila Bernardes</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>Planner Hila</h1>
+    <div class="container">
 
-    <input
-        id="nome"
-        placeholder="Digite um nome">
+        <h1>Planner de Campanha</h1>
 
-    <button onclick="salvar()">
-        Enviar teste
-    </button>
+        <div class="etapa">
+
+            <h2>1. Quem é você?</h2>
+
+            <label>Conte brevemente sua história</label>
+            <textarea id="historia"></textarea>
+
+            <label>O que motivou sua candidatura?</label>
+            <textarea id="motivacao"></textarea>
+
+            <label>Como deseja ser lembrada pelos eleitores?</label>
+            <textarea id="lembrada"></textarea>
+
+            <label>Qual seu maior diferencial?</label>
+            <textarea id="diferencial"></textarea>
+
+            <button onclick="proximaEtapa()">
+                Próxima →
+            </button>
+
+        </div>
+
+    </div>
 
     <script src="app.js"></script>
 

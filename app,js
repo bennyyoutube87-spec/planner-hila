@@ -1,33 +1,28 @@
-async function salvar() {
+function proximaEtapa(){
 
-    const dados = {
-        nome: document.getElementById("nome").value
+    const respostas = {
+
+        historia:
+            document.getElementById("historia").value,
+
+        motivacao:
+            document.getElementById("motivacao").value,
+
+        lembrada:
+            document.getElementById("lembrada").value,
+
+        diferencial:
+            document.getElementById("diferencial").value
+
     };
 
-    try {
+    localStorage.setItem(
+        "plannerHila",
+        JSON.stringify(respostas)
+    );
 
-        const resposta = await fetch(
-            "https://script.google.com/macros/s/AKfycbyKUde869hF8qMr7hMstKBUI6YmDqyV9RJ7k1mD6d-6i1TRdu1_n0fXuyQqCfFp5zsK/exec",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(dados)
-            }
-        );
+    alert("Etapa 1 salva com sucesso!");
 
-        const texto = await resposta.text();
+    console.log(respostas);
 
-        console.log(texto);
-
-        alert("Enviado com sucesso!");
-
-    } catch (erro) {
-
-        console.error(erro);
-
-        alert("Erro ao enviar");
-
-    }
 }
